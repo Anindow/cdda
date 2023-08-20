@@ -28,7 +28,7 @@ const ProductFormModal = ({
               name='title'
               placeholder='Enter your product title'
               value={productData.title}
-              className='w-full p-2 border border-gray-300 rounded-md bg-gray-200'
+              className='w-full p-2 border border-gray-300 rounded-md bg-gray-100'
             />
           </div>
           <div className='mb-4'>
@@ -44,34 +44,39 @@ const ProductFormModal = ({
                 id='description'
                 name='description'
                 value={productData.description}
-                className='w-full p-2 pl-10 border border-gray-300 rounded-md bg-gray-200 h-[102px]'
+                className='w-full p-2 pl-10 border border-gray-300 rounded-md bg-gray-100 h-[102px]'
               />
             </div>
           </div>
           <div className='mb-4'>
-            <label htmlFor='file' className='block font-semibold mb-1'>
-              Add Media
-            </label>
-            <p className='text-sm text-gray-500 mb-2'>
-              Add up to 50 images to your product image, video.
-            </p>
-            <div className='relative'>
-              <span className='absolute top-14 left-20 ms-10 text-gray-500 pointer-events-none'>
-                <span className='text-gray-500'>Drag and drop files or</span>
+  <label htmlFor='file' className='block font-semibold mb-1'>
+    Add Media
+  </label>
+  <p className='text-sm text-gray-500 mb-2'>
+    Add up to 50 images to your product image, video.
+  </p>
+  <div className='relative'>
+    {/* Hidden input */}
+    <input
+      type='file'
+      id='file'
+      name='file'
+      value={productData.file}
+      className='hidden'
+      onChange={handleInputChange}  
+    />
+    
+    <label
+      htmlFor='file'
+      className=' flex flex-col items-center cursor-pointer absolute top-0 left-0 right-0 bottom-0 p-2  border-dashed border-2 border-indigo-600 rounded-md bg-indigo-50 h-[140px]'
+    >
+        <Image className="mt-3" src="/folder-add.svg" height={40} width={40} />
+      <span className='text-gray-500 '>Drag and drop files or</span>
+      <span className='font-semibold text-indigo-600 ms-1'>Browse</span>
+    </label>
+  </div>
+</div>
 
-                <span className='font-semibold text-indigo-600 ms-1'>
-                  Browse
-                </span>
-              </span>
-              <input
-                type='file'
-                id='file'
-                name='file'
-                value={productData.file}
-                className='w-full p-2 pl-10  border-dashed border-2  border-indigo-600 rounded-md bg-indigo-50 h-[140px]'
-              />
-            </div>
-          </div>
 
           {/* <div className='mb-4'>
   <label htmlFor='media' className='block font-semibold mb-1'>
@@ -93,7 +98,7 @@ const ProductFormModal = ({
     />
     <label
       htmlFor='media'
-      className='pb-10 cursor-pointer  bg-gray-200 p-2 rounded-md border border-gray-300 text-center hover:bg-gray-300 '
+      className='pb-10 cursor-pointer  bg-gray-100 p-2 rounded-md border border-gray-300 text-center hover:bg-gray-300 '
     >
       <span className='text-gray-500'>Drag and drop files or</span>
       
@@ -102,7 +107,7 @@ const ProductFormModal = ({
   </div>
 </div> */}
 
-          <div className='mb-4'>
+          <div className='mb-4 mt-40'>
             <label htmlFor='date' className='block font-semibold mb-1'>
               Product Added Date
             </label>
@@ -112,7 +117,7 @@ const ProductFormModal = ({
               name='date'
               placeholder='DD/MM/YYYY'
               value={productData.date}
-              className='relative w-full p-2 border border-gray-300 rounded-md bg-gray-200'
+              className='relative w-full p-2 border border-gray-300 rounded-md bg-gray-100 '
             />
             <Image
               className='absolute ms-96 -mt-8'
@@ -132,7 +137,7 @@ const ProductFormModal = ({
               name='stock'
               placeholder='Enter your stock'
               value={productData.stock}
-              className='w-full p-2 border border-gray-300 rounded-md bg-gray-200'
+              className='w-full p-2 border border-gray-300 rounded-md bg-gray-100'
             />
           </div>
           <div className='mb-4'>
@@ -145,7 +150,7 @@ const ProductFormModal = ({
               name='purchasePrice'
               placeholder='Enter your Purchase Price'
               value={productData.purchasePrice}
-              className='w-full p-2 border border-gray-300 rounded-md bg-gray-200'
+              className='w-full p-2 border border-gray-300 rounded-md bg-gray-100'
             />
           </div>
           <div className='mb-4'>
@@ -158,7 +163,7 @@ const ProductFormModal = ({
               name='sellingPrice'
               placeholder='Enter your Selling Price'
               value={productData.sellingPrice}
-              className='w-full p-2 border border-gray-300 rounded-md bg-gray-200'
+              className='w-full p-2 border border-gray-300 rounded-md bg-gray-100'
             />
           </div>
 
